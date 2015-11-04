@@ -2,7 +2,7 @@
 
 namespace Adam\Bag;
 
-class Bag
+class Bag implements \ArrayAccess
 {
     /**
      * @var array
@@ -125,5 +125,37 @@ class Bag
         $this->attributes = [];
 
         return $this;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function offsetExists($offset)
+    {
+        return isset($this->attributes[$offset]);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function offsetGet($offset)
+    {
+        return $this->get($offset);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function offsetSet($offset, $value)
+    {
+        $this->set($offset, $value);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function offsetUnset($offset)
+    {
+        $this->remove($offset);
     }
 }

@@ -104,4 +104,16 @@ class BagTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(1, count($bag->all()));
         $this->assertEquals('bar', $bag->get('foo'));
     }
+
+    public function testArrayAccess()
+    {
+        $bag = new Bag();
+        $bag['foo'] = 'bar';
+        $this->assertTrue(isset($bag['foo']));
+        $this->assertEquals('bar', $bag['foo']);
+        $this->assertEquals('bar', $bag->get('foo'));
+        unset($bag['foo']);
+        $this->assertEquals(null, $bag->get('foo'));
+        $this->assertFalse(isset($bag['foo']));
+    }
 }

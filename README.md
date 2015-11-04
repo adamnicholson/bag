@@ -67,6 +67,11 @@ $bag->all(); // array
 
 // Empty the data
 $bag->flush();
+
+// Or just use it like an array
+$bag['foo'] = 'bar';
+$bag['foo']; // string "bar"
+$bag->get('foo'); // string "bar"
 ```
 
 ## Contributing
