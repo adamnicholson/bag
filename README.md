@@ -2,6 +2,8 @@
 
 *Bag* is a simple parameter bag class to make working with arrays easier.
 
+[![Build Status](https://travis-ci.org/adamnicholson/bag.svg?branch=master)](https://travis-ci.org/adamnicholson/bag)
+
 ## Motivation
 Boilerplate `isset` calls whenever working with arrays can be a pain.
 
