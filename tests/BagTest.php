@@ -116,4 +116,18 @@ class BagTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(null, $bag->get('foo'));
         $this->assertFalse(isset($bag['foo']));
     }
+
+    public function testJsonSerialize()
+    {
+        $bag = new Bag([
+            'foo' => 'bar',
+            'fizz' => 'buzz'
+        ]);
+
+        $json = json_encode($bag);
+        $data = json_decode($json);
+
+        $this->assertEquals('bar', $data->foo);
+        $this->assertEquals('buzz', $data->fizz);
+    }
 }

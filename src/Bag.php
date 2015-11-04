@@ -2,7 +2,7 @@
 
 namespace Adam\Bag;
 
-class Bag implements \ArrayAccess
+class Bag implements \ArrayAccess, \JsonSerializable
 {
     /**
      * @var array
@@ -157,5 +157,13 @@ class Bag implements \ArrayAccess
     public function offsetUnset($offset)
     {
         $this->remove($offset);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function jsonSerialize()
+    {
+        return $this->attributes;
     }
 }
