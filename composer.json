@@ -1,0 +1,22 @@
+{
+    "name": "adam/bag",
+    "description": "A simple parameter bag to make working with arrays easier",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Adam Nicholson",
+            "email": "adamnicholson10@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Adam\\Bag\\": ["src/", "tests/"]
+        }
+    }
+}
